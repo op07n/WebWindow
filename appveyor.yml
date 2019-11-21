@@ -15,6 +15,7 @@ after_build:
     dir
     cd samples/HelloWorldApp
     # dotnet run -f net461
+    nuget restore    
     dotnet run -f netcoreapp3.0
     cd ..\nuget
     pack.bat
