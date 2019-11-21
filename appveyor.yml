@@ -4,6 +4,7 @@ before_build:
 - cmd: >-
     echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
     # cd ZKWeb
+    cd samples/HelloWorldApp    
     dotnet restore
 build:
   project: WebWindow.Samples.sln
@@ -15,7 +16,6 @@ after_build:
     dir
     cd samples/HelloWorldApp
     # dotnet run -f net461
-    nuget restore    
     dotnet run -f netcoreapp3.0
     cd ..\nuget
     pack.bat
