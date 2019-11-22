@@ -1,23 +1,19 @@
 version: 1.0.{build}
 image: Visual Studio 2019
 before_build:
-- cmd: >-
-    echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
-    # cd ZKWeb
-    cd samples/HelloWorldApp    
-    dotnet restore
+- cmd: echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
+- cmd: cd samples/HelloWorldApp
+- cmd: dotnet restore
 build:
   project: WebWindow.Samples.sln
   verbosity: minimal
 configuration:
   - Release
 after_build:
-- cmd: >-
-    dir
-    cd samples/HelloWorldApp
-    # dotnet run -f net461
-    dotnet run -f netcoreapp3.0
-    cd ..\nuget
-    pack.bat
+- cmd: dir
+- cmd: cd samples/HelloWorldApp
+- cmd: dotnet run -f netcoreapp3.0
+- cmd: cd ..\nuget
+- cmd: pack.bat
 artifacts:
 - path: samples/HelloWorldApp/*.*
