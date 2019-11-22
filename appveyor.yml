@@ -13,7 +13,7 @@ configuration:
 after_build:
 - cmd: dir
 # - cmd: cd samples/HelloWorldApp
-- cmd: dotnet run -f netcoreapp3.0
+- cmd: dotnet build -f netcoreapp3.0 WebWindow.Samples.sln
 - cmd: cd ..\nuget
 - cmd: pack.bat
 artifacts:
