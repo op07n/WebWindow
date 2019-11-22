@@ -14,7 +14,7 @@ after_build:
 - cmd: dir
 # - cmd: cd samples/HelloWorldApp
 - cmd: dotnet build -f netcoreapp3.0 WebWindow.Samples.sln
-- cmd: cd ..\nuget
-- cmd: pack.bat
+- 7z a archive.7z "C:\projects\webwindow\samples"
+- ps: appveyor PushArtifact archive.7z
 artifacts:
-- path: samples/HelloWorldApp/*.*
+- path: C:\projects\webwindow\samples\*.*
