@@ -17,4 +17,4 @@ after_build:
 - 7z a archive.7z "C:\projects\webwindow\samples"
 - ps: appveyor PushArtifact archive.7z
 artifacts:
-- path: C:\projects\webwindow\samples\*.*
+- path: samples\*.*
