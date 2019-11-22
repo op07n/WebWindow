@@ -3,8 +3,8 @@ image: Visual Studio 2019
 before_build:
 - cmd: echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
 # - cmd: cd samples/HelloWorldApp
-- cmd: dotnet restore
-- cmd: nuget restore
+- cmd: dotnet restore WebWindow.Samples.sln
+- cmd: nuget restore WebWindow.Samples.sln
 build:
   project: WebWindow.Samples.sln
   verbosity: minimal
