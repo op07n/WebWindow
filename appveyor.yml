@@ -2,7 +2,7 @@ version: 1.0.{build}
 image: Visual Studio 2019
 before_build:
 - cmd: echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
-- cmd: cd samples/HelloWorldApp
+# - cmd: cd samples/HelloWorldApp
 - cmd: dotnet restore
 - cmd: nuget restore
 build:
@@ -12,7 +12,7 @@ configuration:
   - Release
 after_build:
 - cmd: dir
-- cmd: cd samples/HelloWorldApp
+# - cmd: cd samples/HelloWorldApp
 - cmd: dotnet run -f netcoreapp3.0
 - cmd: cd ..\nuget
 - cmd: pack.bat
