@@ -13,7 +13,7 @@ configuration:
 after_build:
 - cmd: dir
 # - cmd: cd samples/HelloWorldApp
-- cmd: dotnet build -f netcoreapp3.0.1 WebWindow.Samples.sln
+- cmd: dotnet build -f netcoreapp3.0 WebWindow.Samples.sln
 - 7z a archive.7z "C:\projects\webwindow\samples"
 - ps: appveyor PushArtifact archive.7z
 
