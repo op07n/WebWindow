@@ -4,6 +4,7 @@ before_build:
 - cmd: echo -%APPVEYOR_BUILD_NUMBER% >> VERSION.txt
 - cmd: cd samples/HelloWorldApp
 - cmd: dotnet restore
+- cmd: nuget restore
 build:
   project: WebWindow.Samples.sln
   verbosity: minimal
